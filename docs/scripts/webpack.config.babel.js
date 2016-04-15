@@ -5,13 +5,13 @@ import ExtractTextPlugin from "extract-text-webpack-plugin"
 
 export default ({ config, pkg }) => ({
   ...config.dev && {
-    devtool: "cheap-module-eval-source-map",
+    devtool: "#cheap-module-eval-source-map",
   },
   module: {
     loaders: [
-      { // statinamic requirement
+      { // phenomic requirement
         test: /\.md$/,
-        loader: "statinamic/lib/content-loader",
+        loader: "phenomic/lib/content-loader",
         query: {
           context: path.join(config.cwd, config.source),
           // renderer: (text) => html
@@ -37,7 +37,12 @@ export default ({ config, pkg }) => ({
           "style-loader",
           "css-loader" + (
             "?modules"+
-            "&localIdentName=[path][name]--[local]--[hash:base64:5]"
+            "&localIdentName=" +
+            (
+              process.env.NODE_ENV === "production"
+              ? "[hash:base64:5]"
+              : "[path][name]--[local]--[hash:base64:5]"
+            ).toString()
           ) + "!" +
           "postcss-loader",
         ),
@@ -68,7 +73,7 @@ export default ({ config, pkg }) => ({
       NODE_ENV: JSON.stringify(
         config.production ? "production" : process.env.NODE_ENV
       ),
-      STATINAMIC_PATHNAME: JSON.stringify(process.env.STATINAMIC_PATHNAME),
+      PHENOMIC_PATHNAME: JSON.stringify(process.env.PHENOMIC_PATHNAME),
     } }),
     ...config.production && [
       new webpack.optimize.DedupePlugin(),

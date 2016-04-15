@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Link } from "react-router"
 
 import styles from "./index.css"
 
@@ -8,14 +9,30 @@ export default class Footer extends Component {
     return (
       <footer className={ styles.footer }>
         <a
-          href="http://moox.io/statinamic/"
+          href="https://phenomic.io/"
           className={ styles.link }
         >
           { "Powered by " }
           <span className={ styles.reference }>
-            {  "<Statinamic />" }
+            {  "<Phenomic />" }
           </span>
         </a>
+
+        { " | " }
+        { "Pages: " }
+        <Link
+          className={ styles.link }
+          to="/404.html"
+        >
+          { "404" }
+        </Link>
+        { ", " }
+        <Link
+          className={ styles.link }
+          to="/loading/"
+        >
+          { "Loading" }
+        </Link>
       </footer>
     )
   }

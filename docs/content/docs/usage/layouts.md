@@ -1,16 +1,16 @@
 ---
-title: How to use create your page layouts in Statinamic
+title: How to use create your page layouts in Phenomic
 incomplete: true
 ---
 
-Statinamic uses React components as layouts.
+Phenomic uses React components as layouts.
 
-By default, Statinamic might need 2 layouts:
+By default, Phenomic might need 2 layouts:
 
 - `Page`
 - `PageError`
 
-If you use the `statinamic/lib/PageContainer`, you will need those components in
+If you use the `phenomic/lib/PageContainer`, you will need those components in
 your `layouts` definition (by default, declared in `layouts/index.js`).
 
 To use your custom layout, add the `layout` option to the `YAML` frontmatter of
@@ -21,14 +21,14 @@ title: Hello World
 layout: MyCustomLayoutComponent
 ```
 
-## Default page layouts that Statinamic can use
+## Default page layouts that Phenomic can use
 
 ### `Page`
 
 `Page` will be used as the default layout.
-**It is required for Statinamic to work by default.**
+**It is required for Phenomic to work by default.**
 
-[Check out the default `Page` and the `props` it has.](https://github.com/MoOx/statinamic/blob/master/boilerplate/web_modules/layouts/Page/index.js)
+[Check out the default `Page` and the `props` it has.](https://github.com/MoOx/phenomic/blob/master/boilerplate/web_modules/layouts/Page/index.js)
 
 ### `PageError`
 
@@ -38,9 +38,23 @@ layout: MyCustomLayoutComponent
 _This layout is optional_ and a `PageContainer` contains a minimal fallback if
 it is not available.
 
-[Check out the default `PageError` and the `props` it has.](https://github.com/MoOx/statinamic/blob/master/boilerplate/web_modules/layouts/PageError/index.js)
+[Check out the default `PageError` and the `props` it has.](https://github.com/MoOx/phenomic/blob/master/boilerplate/web_modules/layouts/PageError/index.js)
 
 ### `PageLoading`
 
-_This layout is optional_ and not in the default boilerplate. You might want to
-use it to add a loader while a page is loading.
+_This layout is optional_.
+
+If you are not satisfied with the default loading layout, feel free
+adjust it by grabbing some CSS or SVG spinners/loaders from:
+
+- http://codepen.io/collection/jifIK/4/
+- http://projects.lukehaas.me/css-loaders/
+- http://tobiasahlin.com/spinkit/
+- https://github.com/jlong/css-spinners
+- http://codepen.io/collection/HtAne/
+- http://iconmonstr.com/?s=loading
+
+Or learn how to make your own:
+
+- http://www.paulund.co.uk/css-loading-spinners
+- http://stephanwagner.me/only-css-loading-spinner

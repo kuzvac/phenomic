@@ -78,8 +78,8 @@ test("should log error if default layout doesn't exits", (t) => {
   )
   t.true(spy.calledOnce)
   t.true(
-    spy.firstCall.calledWithMatch(
-      /default layout \"AnotherPage\" doesn\'t exist./
+    spy.calledWithMatch(
+      /default layout \"AnotherPage\" not provided./
     )
   )
 })
@@ -147,7 +147,7 @@ test("should redirect if url doesn't match needed", (t) => {
   const spy = sinon.spy()
   console.info = spy
 
-  process.env.STATINAMIC_PATHNAME = "/"
+  process.env.PHENOMIC_PATHNAME = "/"
   dom("http://localhost/foo")
 
   const PageContainer = require("../component").default
@@ -182,7 +182,7 @@ test("should redirect if url doesn't match needed", (t) => {
 })
 
 test("should NOT redirect if url contains hash", (t) => {
-  process.env.STATINAMIC_PATHNAME = "/"
+  process.env.PHENOMIC_PATHNAME = "/"
   dom("http://localhost/foo/#some-hash")
 
   const PageContainer = require("../component").default

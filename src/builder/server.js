@@ -16,7 +16,7 @@ import cleanNodeCache from "../_utils/clean-node-cache"
 import joinUri from "../_utils/join-uri"
 import redBoxRenderer from "../_utils/redbox-renderer"
 
-const log = debug("statinamic:builder:server")
+const log = debug("phenomic:builder:server")
 
 let firstRun = true
 
@@ -204,7 +204,7 @@ export default (options = {}) => {
       throw err
     }
 
-    if (port !== devHost) {
+    if (port !== devPort) {
       log(`Port ${ devPort } is not available. Using port ${ port } instead.`)
     }
     server.listen(port, devHost, (err) => {

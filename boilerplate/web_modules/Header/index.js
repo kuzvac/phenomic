@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import { Link } from "react-router"
 
 import styles from "./index.css"
-import SVG from "react-svg-inline"
-import twitterSVG from "../icons/iconmonstr-twitter-1.svg"
-import gitHubSVG from "../icons/iconmonstr-github-1.svg"
+import Svg from "react-svg-inline"
+import twitterSvg from "../icons/iconmonstr-twitter-1.svg"
+import gitHubSvg from "../icons/iconmonstr-github-1.svg"
 
 export default class Header extends Component {
 
@@ -22,17 +22,17 @@ export default class Header extends Component {
           </div>
           <div className={ styles.navPart2 }>
             <a
-              href="https://twitter.com/Statinamic"
+              href="https://twitter.com/Phenomic_app"
               className={ styles.link }
             >
-              <SVG svg={ twitterSVG } />
+              <Svg svg={ twitterSvg } />
               { "Twitter" }
             </a>
             <a
-              href="https://github.com/MoOx/statinamic"
+              href="https://github.com/MoOx/phenomic"
               className={ styles.link }
             >
-              <SVG svg={ gitHubSVG } />
+              <Svg svg={ gitHubSvg } />
               { "GitHub" }
             </a>
           </div>
