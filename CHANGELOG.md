@@ -1,3 +1,15 @@
+## Boilerplate
+
+- Added: (boilerplate) more layouts and components so new users have more
+  example to show list of entries:
+
+  - ``Homepage`` layout that include a list of posts
+  - ``Post`` layout
+  - ``PagesList`` component to easily show page preview
+  - ``PagePreview`` to display page meta
+
+  ([#71](https://github.com/MoOx/statinamic/issues/71))
+
 # 0.10.2 - 2016-04-14
 
 - Fixed: replacement of some references that have been missed during the rename:
